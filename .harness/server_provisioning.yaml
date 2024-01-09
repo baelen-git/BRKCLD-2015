@@ -1,0 +1,53 @@
+pipeline:
+  name: server_provisioning
+  identifier: server_provisioning
+  projectIdentifier: CiscoLive
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: baelengit
+        repoName: BRKCLD-20215
+        build: <+input>
+  stages:
+    - stage:
+        name: Intersight
+        identifier: Intersight
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            key: cache-{{ checksum "requirements.txt" }}
+            paths:
+              - /root/.cache
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  identifier: dependencies
+                  name: Dependencies
+                  spec:
+                    shell: Sh
+                    command: |-
+                      python -m pip install --upgrade pip
+                      pip install -r requirements.txt
+                    envVariables:
+                      PIP_CACHE_DIR: /root/.cache
+              - step:
+                  type: Run
+                  name: Intersight Workflow
+                  identifier: intersight_wf
+                  spec:
+                    shell: Sh
+                    command: python ico_wf_execute_by_name.py --api-key-legacy  --api-key-file
+                    envVariables:
+                      PIP_CACHE_DIR: /root/.cache
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
