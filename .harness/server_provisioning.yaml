@@ -42,9 +42,7 @@ pipeline:
                   name: Insert API key
                   spec:
                     shell: Sh
-                    command: |-
-                      echo $SECRET | base64 -d 
-                      echo $SECRET | base64 -d > key.txt
+                    command: echo $SECRET | base64 -d > key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
                       SECRET: <+secrets.getValue("intersight_key_text")>
