@@ -54,7 +54,7 @@ pipeline:
                   identifier: intersight_wf
                   spec:
                     shell: Sh
-                    command: python ico_wf_execute_by_name.py --api-key-id <+variable.INTERSIGHT_API_KEY_ID> --api-key-file key.txt
+                    command: python ico_wf_execute_by_name.py --api-key-legacy --api-key-id <+variable.INTERSIGHT_API_KEY_ID> --api-key-file key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
           platform:
