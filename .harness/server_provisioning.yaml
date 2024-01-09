@@ -44,7 +44,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       echo <+secrets.getValue("intersight_key")> | base64 -d > key.txt
-                      echo "keyfile: `cat key.txt`"
+                      cat key.txt
               - step:
                   type: Run
                   name: Execute Intersight Workflow
