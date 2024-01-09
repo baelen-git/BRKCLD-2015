@@ -42,9 +42,12 @@ pipeline:
                   name: Insert API key
                   spec:
                     shell: Sh
-                    command: echo <+secrets.getValue("intersight_key")> | base64 -d > key.txt
+                    command: |-
+                      echo $SECRET 
+                      echo $SECRET > key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
+                      SECRET: <+secrets.getValue("intersight_key")>
               - step:
                   type: Run
                   name: Execute Intersight Workflow
