@@ -38,11 +38,20 @@ pipeline:
                       PIP_CACHE_DIR: /root/.cache
               - step:
                   type: Run
+                  identifier: insertApiKey
+                  name: Insert API key
+                  spec:
+                    shell: Sh
+                    command: echo $SECRET > key.txt
+                    envVariables:
+                      SECRET: <+secrets.getValue("intersight_key")>
+              - step:
+                  type: Run
                   name: Execute Intersight Workflow
                   identifier: intersight_wf
                   spec:
                     shell: Sh
-                    command: python ico_wf_execute_by_name.py --api-key-legacy <+variable.INTERSIGHT_API_KEY_ID> --api-key-file  <+secrets.getValue("intersight_key")>
+                    command: python ico_wf_execute_by_name.py --api-key-legacy <+variable.INTERSIGHT_API_KEY_ID> --api-key-file key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
           platform:
