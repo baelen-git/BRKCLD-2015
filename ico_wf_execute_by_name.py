@@ -16,7 +16,6 @@ workflow_inputs = {
 # Authenticate
 api_client = credentials.config_credentials()
 
-
 # Get Workflow Moid based on workflow name
 
 def get_workflow_definitions(api_client):
