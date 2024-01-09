@@ -38,11 +38,11 @@ pipeline:
                       PIP_CACHE_DIR: /root/.cache
               - step:
                   type: Run
-                  name: Intersight Workflow
+                  name: Execute Intersight Workflow
                   identifier: intersight_wf
                   spec:
                     shell: Sh
-                    command: python ico_wf_execute_by_name.py --api-key-legacy  --api-key-file
+                    command: python ico_wf_execute_by_name.py --api-key-legacy <+variable.INTERSIGHT_API_KEY_ID> --api-key-file  <+secrets.getValue("intersight_key")>
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
           platform:
