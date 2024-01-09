@@ -8,7 +8,7 @@ pipeline:
     ci:
       codebase:
         connectorRef: baelengit
-        repoName: BRKCLD-20215
+        repoName: BRKCLD-2015
         build: <+input>
   stages:
     - stage:
