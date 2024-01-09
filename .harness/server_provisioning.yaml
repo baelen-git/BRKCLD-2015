@@ -42,9 +42,9 @@ pipeline:
                   name: Insert API key
                   spec:
                     shell: Sh
-                    command: |-
-                      echo <+secrets.getValue("intersight_key")> | base64 -d > key.txt
-                      cat key.txt
+                    command: echo <+secrets.getValue("intersight_key")> | base64 -d > key.txt
+                    envVariables:
+                      PIP_CACHE_DIR: /root/.cache
               - step:
                   type: Run
                   name: Execute Intersight Workflow
@@ -60,3 +60,5 @@ pipeline:
           runtime:
             type: Cloud
             spec: {}
+          sharedPaths:
+            - /root/.cache
