@@ -12,7 +12,7 @@ pipeline:
         build: <+input>
   stages:
     - stage:
-        name: Intersight
+        name: Intersight Provisioning
         identifier: Intersight
         description: ""
         type: CI
