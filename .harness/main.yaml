@@ -1,0 +1,22 @@
+inputSet:
+  pipeline:
+    identifier: server_provisioning
+    properties:
+      ci:
+        codebase:
+          build:
+            spec:
+              branch: main
+            type: branch
+    object Object: properties.ci.codebase
+  name: main
+  identifier: main
+  provider:
+    type: Others
+    title: Third-party Git provider
+    info: Store pipeline in a third party Git provider
+    icon: service-github
+    size: 20
+    disabled: false
+  orgIdentifier: default
+  projectIdentifier: CiscoLive
