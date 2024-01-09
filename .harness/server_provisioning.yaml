@@ -47,7 +47,7 @@ pipeline:
                       echo $SECRET > key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
-                      SECRET: <+secrets.getValue("intersight_key")>
+                      SECRET: <+secrets.getValue("intersight_key_text")>
               - step:
                   type: Run
                   name: Execute Intersight Workflow
