@@ -41,10 +41,10 @@ pipeline:
                   identifier: insertApiKey
                   name: Insert API key
                   spec:
-                    shell: Sh
+                    shell: Bash
                     command: |-
                       echo  <+secrets.getValue("intersight_key_rtp")> | base64 -d > key.txt
-                      echo  "<+secrets.getValue("intersight_key_rtp")> | base64 -d"
+                      cat key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
               - step:
