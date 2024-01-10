@@ -9,7 +9,10 @@ pipeline:
       codebase:
         connectorRef: baelengit
         repoName: BRKCLD-2015
-        build: <+input>
+        build:
+          type: branch
+          spec:
+            branch: main
   stages:
     - stage:
         name: Intersight Provisioning
