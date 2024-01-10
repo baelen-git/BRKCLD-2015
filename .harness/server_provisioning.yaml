@@ -42,9 +42,8 @@ pipeline:
                   name: Insert API key
                   spec:
                     shell: Bash
-                    command: |-
-                      echo  <+secrets.getValue("intersight_key_rtp")> | base64 -d > key.txt
-                      cat key.txt
+                    command: |
+                      echo  <+secrets.getValue("intersight_key_rtp")> | base64 -d > /tmp/key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
               - step:
@@ -53,12 +52,13 @@ pipeline:
                   identifier: intersight_wf
                   spec:
                     shell: Sh
-                    command: python ico_wf_execute_by_name.py --api-key-legacy --api-key-file key.txt
+                    command: "python ico_wf_execute_by_name.py "
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
                       INTERSIGHT_API_KEY_ID: 636d24f77564612d3375a70e/63dbc8737564612d304e2ba9/63ed31497564612d3004c16e
                       INTERSIGHT_ORG: 636d24fc6972652d3071677c
                       INTERSIGHT_WF_NAME: Create NTP Policy
+                      INTERSIGHT_API_PRIVATE_KEY: /tmp/key.txt
           platform:
             os: Linux
             arch: Amd64
