@@ -44,7 +44,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       echo  <+secrets.getValue("intersight_key_rtp")> | base64 -d > key.txt
-                      echo  <+secrets.getValue("intersight_key_rtp")> | base64 -d 
+                      echo  "<+secrets.getValue("intersight_key_rtp")> | base64 -d"
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
               - step:
