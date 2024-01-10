@@ -42,18 +42,22 @@ pipeline:
                   name: Insert API key
                   spec:
                     shell: Sh
-                    command: echo  <+secrets.getValue("intersight_key_text")> | base64 -d > key.txt
+                    command: echo  $SECRET | base64 -d > key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
+                      SECRET: <+secrets.getValue("intersight_key_rmlab")>
               - step:
                   type: Run
                   name: Execute Intersight Workflow
                   identifier: intersight_wf
                   spec:
                     shell: Sh
-                    command: python ico_wf_execute_by_name.py --api-key-legacy --api-key-id <+variable.INTERSIGHT_API_KEY_ID> --api-key-file key.txt
+                    command: python ico_wf_execute_by_name.py --api-key-file key.txt
                     envVariables:
                       PIP_CACHE_DIR: /root/.cache
+                      INTERSIGHT_API_KEY_ID: 64485f777564613305922a60/659e81b47564613305194d07/659e97fb7564613305194f14
+                      INTERSIGHT_ORG: 64485f7a69726531053e1126
+                      INTERSIGHT_WF_NAME: Create NTP Policy
           platform:
             os: Linux
             arch: Amd64
