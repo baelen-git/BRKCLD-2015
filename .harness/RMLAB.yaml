@@ -1,0 +1,15 @@
+inputSet:
+  name: RMLAB
+  identifier: RMLAB
+  orgIdentifier: default
+  projectIdentifier: CiscoLive
+  pipeline:
+    identifier: server_provisioning
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: RMLAB
+  object Object: pipeline.properties.ci.codebase
