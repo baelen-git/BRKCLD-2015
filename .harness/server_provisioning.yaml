@@ -45,9 +45,9 @@ pipeline:
                   name: Insert API key
                   spec:
                     shell: Sh
-                    command: echo $SECRET | base64 -d > /tmp/key.txt
+                    command: echo $INTERSIGHT_API_KEY | base64 -d > /tmp/key.txt
                     envVariables:
-                      SECRET: <+secrets.getValue("intersight_key_rtp")>
+                      INTERSIGHT_API_KEY: <+secrets.getValue("intersight_key_rtp")>
               - step:
                   type: Run
                   name: Execute Intersight Workflow
