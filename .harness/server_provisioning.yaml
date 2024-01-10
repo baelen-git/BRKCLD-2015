@@ -47,7 +47,6 @@ pipeline:
                     shell: Sh
                     command: echo $SECRET | base64 -d > /tmp/key.txt
                     envVariables:
-                      PIP_CACHE_DIR: /root/.cache
                       SECRET: <+secrets.getValue("intersight_key_rtp")>
               - step:
                   type: Run
