@@ -1,4 +1,5 @@
 import credentials
+import os
 from intersight.api import workflow_api
 from intersight.rest import ApiException
 from intersight.model.workflow_workflow_info import WorkflowWorkflowInfo
@@ -6,8 +7,8 @@ from intersight.model.mo_base_mo_relationship import MoBaseMoRelationship
 from intersight.model.workflow_workflow_definition_relationship import WorkflowWorkflowDefinitionRelationship
 
 # Variables. Change accordingly
-workflow_name = 'Create NTP Policy'
-org_moid = '636d24fc6972652d3071677c'
+workflow_name = os.getenv('INTERSIGHT_WF_NAME')
+org_moid = os.getenv('INTERSIGHT_ORG')
 
 workflow_inputs = {
     "name": "Boris-ntp-test-delete"
