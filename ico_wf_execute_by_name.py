@@ -11,8 +11,38 @@ workflow_name = os.getenv('INTERSIGHT_WF_NAME')
 org_moid = os.getenv('INTERSIGHT_ORG')
 
 workflow_inputs = {
-    "name": "Boris-ntp-test-delete"
+    {
+    "SourceProfileTemplate": {
+        "Moid": "650b29eb77696e310532398a",
+        "ObjectType": "server.ProfileTemplate"
+    },
+    "targetos": "esxi70",
+    "Vcenter": {
+        "Moid": "64f6288f6f726131050bdab8",
+        "ObjectType": "asset.DeviceRegistration"
+    },
+    "esxihosts": [
+        {
+        "Server": {
+            "Moid": os.getenv('SERVER_MOID'),
+            "ObjectType": "compute.PhysicalSummary"
+        },
+        "hostname": os.getenv('SERVER_NAME'),
+        "ipaddress": os.getenv('SERVER_IP'),
+        "netmask": os.getenv('SERVER_NETMASK'),
+        "gateway": os.getenv('SERVER_GATEWAY'),
+        "nameserver": "192.168.100.70",
+        "adminpassword": "C1sco123",
+        "Cluster": "/RMLAB/host/ICO-Cluster"
+        }
+    ]
+    }
 }
+
+
+
+
+
 
 # Authenticate
 api_client = credentials.config_credentials()

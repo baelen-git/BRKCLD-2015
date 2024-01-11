@@ -1,0 +1,179 @@
+{
+  "ObjectType": "mo.WebhookResult",
+  "ClassId": "mo.WebhookResult",
+  "AccountMoid": "64485f777564613305922a60",
+  "DomainGroupMoid": "64485f777564613305922a61",
+  "EventObjectType": "workflow.WorkflowInfo",
+  "Event": {
+    "Moid": "659fbb2e696f6e31054d31ab",
+    "ObjectType": "workflow.WorkflowInfo",
+    "ClassId": "workflow.WorkflowInfo",
+    "CreateTime": "2024-01-11T09:55:58.353Z",
+    "ModTime": "2024-01-11T10:05:38.282Z",
+    "Tags": [],
+    "Owners": [
+      "64485f777564613305922a60",
+      "6571cc0f6f7261310595444a"
+    ],
+    "SharedScope": "",
+    "AccountMoid": "64485f777564613305922a60",
+    "DomainGroupMoid": "64485f777564613305922a61",
+    "Ancestors": [],
+    "PermissionResources": [
+      {
+        "ObjectType": "organization.Organization",
+        "ClassId": "mo.MoRef",
+        "Moid": "64485f7a69726531053e1126",
+        "link": "https://www.eu-central-1.intersight.com/api/v1/organization/Organizations/64485f7a69726531053e1126"
+      }
+    ],
+    "Action": "None",
+    "CleanupTime": "2024-04-10T10:05:38.282Z",
+    "DynamicWorkflowMeta": null,
+    "Email": "system@intersight",
+    "EndTime": "2024-01-11T10:05:38.282Z",
+    "EngineProperties": {
+      "ClassId": "workflow.WorkflowEngineProperties",
+      "ObjectType": "workflow.WorkflowEngineProperties",
+      "Action": "",
+      "Version": 0,
+      "WorkflowName": ""
+    },
+    "FailedWorkflowCleanupDuration": 2160,
+    "Input": {
+      "DEPLOYMENT_ENV": "CLOUD",
+      "DISCOVERY_MODE": "DEEP",
+      "RACK_DEV_MOID": "",
+      "RESTORE_POWER_VALUE": "Off",
+      "USER_OPERATION": "false"
+    },
+    "InstId": "bb1d5fb1-f6a0-47fa-a4e8-eddfe8469e0d",
+    "Internal": false,
+    "LastAction": "Start",
+    "Message": [],
+    "MetaVersion": 0,
+    "Name": "Blade Discovery",
+    "Output": {},
+    "PauseReason": "None",
+    "Progress": 100,
+    "Properties": {
+      "ClassId": "workflow.WorkflowInfoProperties",
+      "ObjectType": "workflow.WorkflowInfoProperties",
+      "AutoRestartProperties": {
+        "ClassId": "workflow.WorkflowInfoAutoRestartProperties",
+        "ObjectType": "workflow.WorkflowInfoAutoRestartProperties",
+        "AutoRestart": false,
+        "CanRestart": true,
+        "CurrentRetryCount": 0,
+        "RetryCount": 3,
+        "RetryDelay": 30
+      },
+      "Cancelable": {
+        "ClassId": "workflow.CancelableType",
+        "ObjectType": "workflow.CancelableType",
+        "CancelableStates": [],
+        "Enabled": true,
+        "Mode": "ApiOnly"
+      },
+      "NonNativeSubWorkflow": false,
+      "Retryable": false,
+      "RollbackAction": "Disabled",
+      "RollbackOnCancel": false,
+      "RollbackOnFailure": false
+    },
+    "RetryFromTaskName": "",
+    "SecurityContext": {
+      "ClassId": "iam.SecurityContext",
+      "ObjectType": "iam.SecurityContext",
+      "AccountId": "",
+      "AuthTypeInstance": {
+        "ObjectType": "cmrf.CmRf",
+        "ClassId": "cmrf.CmRf",
+        "Moid": ""
+      },
+      "ContextType": "",
+      "DomainGroupId": "",
+      "IsDelegated": false,
+      "PermissionId": "",
+      "PrivilegeNames": null,
+      "PrivilegeSets": [],
+      "ResourceRoles": [],
+      "Subject": ""
+    },
+    "SequenceParams": {
+      "ClassId": "workflow.SequenceParams",
+      "ObjectType": "workflow.SequenceParams",
+      "SequenceKey": ""
+    },
+    "SessionId": "",
+    "Src": "gobi",
+    "StartTime": "2024-01-11T09:55:58.353Z",
+    "Status": "COMPLETED",
+    "SuccessWorkflowCleanupDuration": 2160,
+    "TraceId": "DC8327e4ca14e5ab1b6ae65ba78a2964d7",
+    "Type": "UserDefined",
+    "UserActionRequired": false,
+    "UserId": "",
+    "Variable": {},
+    "WaitReason": "None",
+    "WorkflowCtx": {
+      "ClassId": "workflow.WorkflowCtx",
+      "ObjectType": "workflow.WorkflowCtx",
+      "EnableDebug": false,
+      "InitiatorCtx": {
+        "ClassId": "workflow.InitiatorContext",
+        "ObjectType": "workflow.InitiatorContext",
+        "InitiatorMoid": "659fbb2e6f6269320577f868",
+        "InitiatorName": "FI-UCSX-1-1",
+        "InitiatorType": "compute.BladeIdentity",
+        "ResultHandler": {
+          "ClassId": "workflow.ResultHandler",
+          "ObjectType": "workflow.ResultHandler",
+          "ResultHandlerService": "gobi",
+          "ResultHandlerTask": "compute.DiscoveryResultHandler"
+        }
+      },
+      "TargetCtxList": [
+        {
+          "ClassId": "workflow.TargetContext",
+          "ObjectType": "workflow.TargetContext",
+          "TargetMoid": "659fbb2e6f6269320577f868",
+          "TargetName": "FI-UCSX-1-1",
+          "TargetType": "compute.BladeIdentity"
+        },
+        {
+          "ClassId": "workflow.TargetContext",
+          "ObjectType": "workflow.TargetContext",
+          "TargetMoid": "659fbbc86176753105ebe899",
+          "TargetName": "FI-UCSX-1-1",
+          "TargetType": "compute.Blade"
+        }
+      ],
+      "WorkflowAction": "",
+      "WorkflowInfoMoid": "",
+      "WorkflowMetaName": "",
+      "WorkflowSubtype": "",
+      "WorkflowType": "compute.BladeDiscovery"
+    },
+    "WorkflowKey": "Blade Discovery659fbb2e6f6269320577f868659fbb2e6f6269320577f868",
+    "WorkflowMetaType": "UserDefined",
+    "WorkflowTaskCount": 35,
+    "WorkflowWorkerTaskCount": 51,
+    "Account": null,
+    "AssociatedObject": {
+      "ObjectType": "compute.BladeIdentity",
+      "ClassId": "mo.MoRef",
+      "Moid": "659fbb2e6f6269320577f868",
+      "link": "https://www.eu-central-1.intersight.com/api/v1/compute/BladeIdentities/659fbb2e6f6269320577f868"
+    },
+    "Organization": null,
+    "Permission": null
+  },
+  "Operation": "Modified",
+  "Subscription": {
+    "ObjectType": "notification.AccountSubscription",
+    "ClassId": "mo.MoRef",
+    "Moid": "659e8d3373757331051bb0ab",
+    "link": "https://www.eu-central-1.intersight.com/api/v1/notification/AccountSubscriptions/659e8d3373757331051bb0ab"
+  }
+}
