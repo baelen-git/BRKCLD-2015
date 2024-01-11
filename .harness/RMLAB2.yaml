@@ -1,5 +1,6 @@
 inputSet:
   name: RMLAB2
+  tags: {}
   identifier: RMLAB2
   orgIdentifier: default
   projectIdentifier: CiscoLive
@@ -19,6 +20,6 @@ inputSet:
                       envVariables:
                         SERVER_MOID: <+trigger.payload.Event.WorkflowCtx.TargetCtxList[1].TargetMoid>
                         SERVER_NAME: <+trigger.payload.Event.WorkflowCtx.TargetCtxList[1].TargetName>
-                        SERVER_IP: 192.168.100.156
+                        SERVER_IP: 192.168.100.155
                         SERVER_NETMASK: 255.255.255.0
                         SERVER_GATEWAY: 192.168.100.254
