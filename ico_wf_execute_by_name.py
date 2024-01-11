@@ -11,7 +11,6 @@ workflow_name = os.getenv('INTERSIGHT_WF_NAME')
 org_moid = os.getenv('INTERSIGHT_ORG')
 
 workflow_inputs = {
-    {
     "SourceProfileTemplate": {
         "Moid": "650b29eb77696e310532398a",
         "ObjectType": "server.ProfileTemplate"
@@ -37,12 +36,6 @@ workflow_inputs = {
         }
     ]
     }
-}
-
-
-
-
-
 
 # Authenticate
 api_client = credentials.config_credentials()
