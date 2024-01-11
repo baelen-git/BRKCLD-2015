@@ -1,0 +1,24 @@
+inputSet:
+  name: RMLAB2
+  identifier: RMLAB2
+  orgIdentifier: default
+  projectIdentifier: CiscoLive
+  pipeline:
+    identifier: server_provisioning
+    stages:
+      - stage:
+          identifier: Intersight
+          type: CI
+          spec:
+            execution:
+              steps:
+                - step:
+                    identifier: intersight_wf
+                    type: Run
+                    spec:
+                      envVariables:
+                        SERVER_MOID: <+trigger.payload.Event.WorkflowCtx.TargetCtxList[1].TargetMoid>
+                        SERVER_NAME: <+trigger.payload.Event.WorkflowCtx.TargetCtxList[1].TargetName>
+                        SERVER_IP: 192.168.100.156
+                        SERVER_NETMASK: 255.255.255.0
+                        SERVER_GATEWAY: 192.168.100.254
