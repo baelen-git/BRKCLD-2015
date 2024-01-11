@@ -72,7 +72,7 @@ workflow_def = WorkflowWorkflowDefinitionRelationship(
 # Workflow Definition
 
 workflow = WorkflowWorkflowInfo(
-   name="Create an NTP Policy",
+   name=os.getenv('INTERSIGHT_WF_NAME'),
    associated_object=ass_obj,
    action="Start",
    input = workflow_inputs,
